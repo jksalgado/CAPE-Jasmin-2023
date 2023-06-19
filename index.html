@@ -32,7 +32,8 @@
     </style>
   </head>
   <body>
-    <center><img class="me" src="/images/headshot.jpg" /></center>
+    <button id="button">click me</button>
+    <center><img id="headshot" class="me" src="images/headshot.jpg" /></center>
     <p>
       HELLO!!!! My name is Jasmin Salgado. I am a rising sophomore at UIUC
       studying Computer Science <3.
@@ -40,8 +41,47 @@
         >Connect with me on LinkedIn!</a
       >
     </p>
-    <center><img src="/images/IMG_6840.jpeg" /></center>
-    <p class="caption">this is a picture i took!</p>
-    <p>i really enjoy taking pictures! this is one of my fav pictures.</p>
+    <center><img src="images/IMG_6840.jpeg" /></center>
+    <p id="nice" class="caption">this is a picture i took!</p>
+    <p>i really enjoy taking pictures! this is one of my fav pictures.</p>    
+    <script //lang="JavaScript" type="text/JavaScript">
+      // console.log("CAPE");
+      // console.log(10 + 3);
+      // console.log(5 > 6);
+      var count  = 0;
+
+      // document.getElementById("button").addEventListener("click", change);
+      document.getElementById("button").addEventListener("click", changeContent);
+      document.getElementById("button").addEventListener("mouseover", darken);
+      document.getElementById("button").addEventListener("mouseout", lighten);
+
+
+      // function change() {
+      //   document.getElementById("nice").innerHTML = "Hello World!";
+      // }
+      
+      function changeContent() {
+        var pic = document.getElementById("headshot");
+        count++;
+        if (count % 2 != 0) {
+          pic.src = "images/IMG_7362.jpeg";
+          pic.style.height = '520px';
+          pic.style.border = 'thick solid #9CAF88';
+        } else {
+          pic.src = "images/headshot.jpg";
+          pic.style.height = '420px';
+          pic.style.border = '#000000';
+        }
+      }
+
+      function darken() {
+        document.getElementById("button").style.backgroundColor = "#A020F0";
+      }
+
+      function lighten() {
+        document.getElementById("button").style.backgroundColor = "grey";
+      }
+    </script>
+
   </body>
 </html>
